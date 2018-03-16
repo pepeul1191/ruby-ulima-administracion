@@ -8,7 +8,7 @@ class MyApp < Sinatra::Base
   enable :sessions
   set :session_secret, 'super secret'
   set :public_folder, File.dirname(__FILE__) + '/public'
-  #set :layout, 'views/layouts'
+  set :layout, 'views/layouts'
 
   configure do
     set :app_file, __FILE__
