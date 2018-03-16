@@ -15,16 +15,18 @@ Basado en boilerplate wixel de Sinatra.
 Ejecutar migración
 
     $ sequel -m path/to/migrations postgres://host/database
-    $ sequel -m path/to/migrations sqlite://db/db_ubicaciones.db
-    $ sequel -m path/to/migrations mysql://root:123@localhost/db_ubicaciones
+    $ sequel -m path/to/migrations sqlite://db/ulima.db
+    $ sequel -m path/to/migrations mysql://root:123@localhost/ulima
 
 Ejecutar el 'down' de las migraciones de la última a la primera:
 
-    $ sequel -m db/migrations -M 0 mysql://root:123@localhost/db_ubicaciones
+    $ sequel -m db/migrations -M 0 mysql://root:123@localhost/ulima
+    $ sequel -m db/migrations -M 0 sqlite://db/ulima.db
 
 Ejecutar el 'up' de las migraciones hasta un versión especifica:
 
-    $ sequel -m db/migrations -M #version mysql://root:123@localhost/db_ubicaciones
+    $ sequel -m db/migrations -M #version mysql://root:123@localhost/ulima
+    $ sequel -m db/migrations -M #version sqlite://db/ulima.db
 
 Tipos de Datos de Columnas
 

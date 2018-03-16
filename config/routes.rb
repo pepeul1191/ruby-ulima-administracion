@@ -1,1 +1,2 @@
-#require_relative '../routes/departamento'
+require_relative '../routes/alumno'
+require_relative '../routes/empleado'
