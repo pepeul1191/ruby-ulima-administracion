@@ -1,0 +1,6 @@
+Profesor
+Jefe de Prácticas
+Ayundante de Cátedra
+Secretaria
+Imprenta
+Auditorio
