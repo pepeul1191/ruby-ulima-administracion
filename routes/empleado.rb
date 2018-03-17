@@ -1,5 +1,5 @@
 class MyApp < Sinatra::Base
   get '/empleado/listar' do
-    'empleado/listar'
+    Empleado.to_a.to_json
   end
 end
