@@ -16,7 +16,7 @@ Sequel.migration do
 
     alter_table(:alumnos) do
       add_foreign_key :carrera_id, :carreras
-      add_foreign_key :estado_alumno_id, :estado_alumnos
+      add_foreign_key :alumno_estado_id, :alumno_estados
     end
 	end
 
