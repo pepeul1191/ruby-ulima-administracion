@@ -1,6 +1,6 @@
 class MyApp < Sinatra::Base
   get '/empleado/listar' do
-    Empleado.to_a.to_json
+    Empleado.limit(30).to_a.to_json
   end
 
   get '/empleado/obtener/:id' do
