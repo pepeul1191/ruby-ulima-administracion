@@ -6,4 +6,8 @@ class MyApp < Sinatra::Base
   get '/empleado/obtener/:id' do
     Empleado.select(:id, :codigo, :dni, :nombres, :paterno, :materno, :correo_personal, :correo_laboral, :celular).where(:id => params[:id]).to_a[0].to_json
   end
+
+  get '/empleado/dni/:dni' do
+    Empleado.select(:id, :nombres, :paterno, :materno).where(:dni => params[:dni]).to_a[0].to_json
+  end
 end
