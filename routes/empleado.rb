@@ -4,7 +4,11 @@ class MyApp < Sinatra::Base
   end
 
   get '/empleado/obtener/:id' do
-    Empleado.select(:id, :codigo, :dni, :nombres, :paterno, :materno, :correo_personal, :correo_laboral, :celular).where(:id => params[:id]).to_a[0].to_json
+    DB.fetch('
+      SELECT E.id, E.codigo, E.dni, E.nombres, E.paterno, E.materno, E.correo_personal, E.correo_laboral, E.celular , C.nombre AS cargo FROM
+      empleados E INNER JOIN cargos C ON E.cargo_id = C.id
+      WHERE E.id = ?', params[:id]
+    ).to_a[0].to_json
   end
 
   get '/empleado/codigo_empleado/:codigo_empleado' do
